@@ -44,9 +44,9 @@ It does not automatically replace the agent you talk to.
 
 ## Install and reuse
 
-This package has not been installed through a marketplace or tested in a fresh
-Codex session. Add this repository root as the marketplace source, or run from
-this directory:
+Package validation does not test marketplace installation or fresh-session
+behavior. Add this repository root as the marketplace source, or run from this
+directory:
 
 ```sh
 codex plugin marketplace add .
@@ -68,6 +68,33 @@ is separate from portable plugin skill installation.
 Keep the package in Git and clone it on other computers. Reconnect external
 services separately. Atelier does not bundle Product Design or other plugins.
 No model is pinned; host model defaults and permissions apply.
+
+## Branding and updates
+
+The plugin's listing logo and composer icon are declared in
+`plugin.json` under `extensions.com.openai.interface`. Their paths are relative
+to the plugin root; keep the referenced files in `assets/` when distributing.
+The square [icon](assets/atelier-icon.png) serves both plugin surfaces, while the
+transparent [wordmark](assets/atelier-wordmark.png) is available for light backgrounds.
+See the [official icon requirements](https://developers.openai.com/plugins/deploy/submission#icons-and-screenshots).
+
+For a Git-backed marketplace, commit and push the new package before refreshing
+the source. For a local marketplace, update the source directory first. Refresh
+the configured Atelier marketplace with:
+
+```sh
+codex plugin marketplace upgrade atelier-marketplace
+```
+
+Then restart the desktop app and check Atelier in the Plugins Directory and a
+fresh chat. Installed plugins load from a cached copy, so editing this repository
+alone is not proof that the installed plugin changed. These steps follow the
+[official marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
+
+Update buttons and badges belong to the host app. The documented manifest fields
+do not offer a switch to create one. Increasing the package version identifies a
+release; it does not guarantee a visible update badge. This package's branding
+and refresh behavior still need a live installation check.
 
 ## Extend
 

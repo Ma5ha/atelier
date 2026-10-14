@@ -1,6 +1,18 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "atelier",
-  "version": "0.3.1",
-  "description": "A personal coordinator with planning, delegation, research, and verification workflows."
+  "version": "0.3.2",
+  "description": "A personal coordinator with planning, delegation, research, and verification workflows.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Atelier",
+        "shortDescription": "A workshop for planning, delegation, research, and verification.",
+        "brandColor": "#17252C",
+        "brandColorDark": "#F07864",
+        "composerIcon": "./assets/atelier-icon.png",
+        "logo": "./assets/atelier-icon.png"
+      }
+    }
+  }
 }
