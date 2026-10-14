@@ -38,7 +38,7 @@ Creating a role does not automatically register it with the host, install skills
 or provision tools or accounts.
 
 The TOML file also
-provides a custom subagent named `atelier_coordinator` on hosts that discover it.
+provides a custom subagent named `atelier` on hosts that discover it.
 Ask the main agent to spawn that role if you specifically want a delegated coordinator.
 It does not automatically replace the agent you talk to.
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "atelier",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A personal coordinator with planning, delegation, research, and verification workflows."
 }
