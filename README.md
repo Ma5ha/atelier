@@ -5,6 +5,7 @@ A personal Codex workshop with a coordinator and reusable supporting skills.
 ## Components
 
 - `plugin.json`: portable plugin manifest.
+- `.agents/plugins/marketplace.json`: marketplace catalog exposing Atelier.
 - `skills/atelier/SKILL.md`: main coordinator entry point.
 - `skills/atelier-plan/`: goals, dependencies, and capability selection.
 - `skills/atelier-staff/`: specialist discovery and creation when a matching role is missing.
@@ -44,8 +45,18 @@ It does not automatically replace the agent you talk to.
 ## Install and reuse
 
 This package has not been installed through a marketplace or tested in a fresh
-Codex session. Register it in a supported local/private marketplace, then install
-and enable it following the [packaging guide](https://developers.openai.com/plugins/build/plugins).
+Codex session. Add this repository root as the marketplace source, or run from
+this directory:
+
+```sh
+codex plugin marketplace add .
+```
+
+The catalog at `.agents/plugins/marketplace.json` points to the plugin at `./`.
+If adding a Git URL, commit and push the catalog first so the downloaded copy
+contains it. A root `plugin.json` alone is not a marketplace catalog.
+
+Then install and enable Atelier following the [packaging guide](https://developers.openai.com/plugins/build/plugins).
 After installation, select Atelier from the `$` skill suggestions.
 
 To reuse the custom agent in another project, copy

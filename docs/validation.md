@@ -3,6 +3,8 @@
 Checked on 2026-10-14:
 
 - Parsed `plugin.json` as JSON and checked the package name.
+- Parsed `.agents/plugins/marketplace.json` and resolved its plugin source to
+  the repository root containing `plugin.json`.
 - Parsed the custom-agent file with Python's TOML parser and checked its required string fields.
 - Checked the skills for complete name/description frontmatter and valid names.
 - Resolved every local Markdown link from the skills to an existing file.
